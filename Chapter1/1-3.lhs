@@ -16,3 +16,8 @@ some other multi character block.)
 
 > urlifyFold :: [Char] -> [Char]
 > urlifyFold = foldr (\x y -> if x==' ' then '%':'2':'0':y  else x:y) []
+
+Do note that the original problem in its imperative form was testing the
+technique of in-place string shifting, the entire concept of which is 
+lost in this version and is replaced with a bunch of other functional
+arising complexities.
