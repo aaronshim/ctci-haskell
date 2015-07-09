@@ -14,8 +14,9 @@ isUnique xs = (nub xs) == xs
 
 
 --oh wait, groupBy/group should be slightly better than nub?
-isUnique2 :: Eq a => [a] -> Bool
-isUnique2 xs = (length (filter (flip (>) 1) (map length (group xs)))) > 0
+--(it should only be a linear scan)
+--isUnique2 :: Eq a => [a] -> Bool
+isUnique2 xs = null $ filter (1 < ) (map length ((group.sort) xs))
 
 --by the design of haskell, these don't use extra data structures?
 -- In imperative langauges where it is very easy to make a dictionary
