@@ -2,7 +2,7 @@ module OneOne where
 import Data.List
 
 -- this is the O(n^2) solution because nub is O(n^2)
-isUnique :: Eq a => [a] -> Bool
+isUnique :: Ord a => [a] -> Bool
 isUnique xs = (nub xs) == xs
 
 --is there a less than O(n^2) solution?
@@ -15,7 +15,7 @@ isUnique xs = (nub xs) == xs
 
 --oh wait, groupBy/group should be slightly better than nub?
 --(it should only be a linear scan)
---isUnique2 :: Eq a => [a] -> Bool
+isUnique2 :: Ord a => [a] -> Bool
 isUnique2 xs = null $ filter (1 < ) (map length ((group.sort) xs))
 
 --by the design of haskell, these don't use extra data structures?
