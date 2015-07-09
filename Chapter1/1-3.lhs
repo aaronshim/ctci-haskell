@@ -1,5 +1,9 @@
 > module OneThree where
 
+NOTE: the following line will require the MissingH library!
+
+> import Data.List.Utils
+
 The main problem here is that in Haskell, strings are lists of chars
 so if we decided to do string replacements, we sometimes need to
 replace one element with a multi-element sequence. Map or
@@ -21,3 +25,9 @@ Do note that the original problem in its imperative form was testing the
 technique of in-place string shifting, the entire concept of which is 
 lost in this version and is replaced with a bunch of other functional
 arising complexities.
+
+And of course, the trivial solution that uses the MissingH library
+
+> urlifyT :: [Char] -> [Char]
+> urlifyT = replace " " "%20"
+
