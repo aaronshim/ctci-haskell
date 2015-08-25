@@ -7,5 +7,5 @@
 > recursiveMultiply x 1 = x
 > recursiveMultiply 1 x = x
 > recursiveMultiply x y
->   | x < 0 or y < 0 = error "Cannot deal with negative numbers"
+>   | x < 0 || y < 0 = error "Cannot deal with negative numbers"
 >   | otherwise = y + recursiveMultiply (x-1) y
