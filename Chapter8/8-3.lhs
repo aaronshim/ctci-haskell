@@ -51,4 +51,5 @@ loops.
 The checks are also a little bit more complicated when there are repeated 
 elements in the list. In that case, we have to once again look at both sides
 of the list even when we get a suspicision on whether it is to the right or
-left.
+left. The coding for this is considerably harder and will probably use maybe
+types.
